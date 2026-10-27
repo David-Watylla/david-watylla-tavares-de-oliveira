@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Corridas — conceito de mobilidade</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-label="Conceito de corridas da Uber">
+      <div class="status-bar"><span>9:41</span><span class="status-icons"><span>●●●</span><span>◖</span><span class="battery"></span></span></div>
+      <header class="app-header">
+        <button class="icon-button menu-button" aria-label="Abrir menu" id="menu-button"><span></span><span></span></button>
+        <div class="mode-tabs" role="tablist" aria-label="Tipo de serviço">
+          <button class="mode-tab active" role="tab" aria-selected="true"><span class="emoji-car">🚘</span>Corridas</button>
+          <button class="mode-tab muted" role="tab" aria-selected="false"><span>🥗</span>Entregas</button>
+        </div>
+        <button class="avatar-button" aria-label="Conta" data-nav="Account">A</button>
+      </header>
+
+      <section class="screen active" id="home-screen" aria-labelledby="home-title">
+        <h1 class="sr-only" id="home-title">Solicitar uma corrida</h1>
+        <div class="home-content">
+          <div class="search-bar" id="open-search" role="button" tabindex="0" aria-label="Para onde?">
+            <span class="search-icon" aria-hidden="true"></span>
+            <strong>Para onde?</strong>
+            <span class="search-divider"></span>
+            <button class="time-pill" id="time-button"><span class="clock-icon">◷</span><span id="time-label">Agora</span><span class="chevron-down"></span></button>
+          </div>
+
+          <div class="saved-places" aria-label="Locais salvos">
+            <button class="place-row" data-destination="Infinity House" data-address="30 Ilupeju Byepass, Onipanu 102215">
+              <span class="place-pin"><span></span></span><span class="place-copy"><strong>Infinity House</strong><small>30 Ilupeju Byepass, Onipanu 102215...</small></span><span class="chevron">›</span>
+            </button>
+            <button class="place-row" data-destination="Keystone Bank" data-address="224 Ikorodu-Ososun Rd, Palmgrove">
+              <span class="place-pin"><span></span></span><span class="place-copy"><strong>Keystone Bank</strong><small>224 Ikorodu-Ososun Rd, Palmgrove ...</small></span><span class="chevron">›</span>
+            </button>
+          </div>
+
+          <div class="section-heading"><h2>Sugestões</h2><button class="text-button" id="see-services">Ver tudo</button></div>
+          <div class="suggestions">
+            <button class="suggestion-card" data-destination="Ikeja City Mall"><img src="assets/car-ride.png" alt="Carro branco para corrida" /><span>Corrida</span></button>
+            <button class="suggestion-card" data-destination="Entrega de pacote"><img src="assets/package.png" alt="Pacote para entrega" /><span>Entrega</span></button>
+            <button class="suggestion-card" data-destination="Corrida por hora"><img src="assets/car-clock.png" alt="Carro e relógio" /><span>Por hora</span></button>
+          </div>
+
+          <div class="section-heading promo-heading"><h2>Economize com a Uber</h2></div>
+          <div class="promo-scroller">
+            <article class="promo-card promo-share"><img src="assets/shared-ride.png" alt="Duas pessoas compartilhando uma corrida" /><div><strong>Compartilhe sua corrida</strong><span>Divida a corrida e o valor</span></div></article>
+            <article class="promo-card promo-stops"><img src="assets/multiple-stops.png" alt="Ilustração de mapa" /><div><strong>Um motorista, várias paradas</strong><span>Experimente a Uber por hora</span></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="search-screen" aria-labelledby="search-title">
+        <div class="screen-toolbar"><button class="back-button" data-back aria-label="Voltar">←</button><span class="toolbar-caption">Planeje sua corrida</span><button class="text-button" id="switch-rider">Trocar passageiro</button></div>
+        <h1 class="screen-title" id="search-title">Para onde?</h1>
+        <label class="destination-field"><span class="field-dot"></span><input id="destination-input" type="text" placeholder="Digite o destino" autocomplete="off" /><button class="clear-button" id="clear-destination" aria-label="Limpar destino">×</button></label>
+        <div class="pickup-current"><span class="pickup-marker"></span><div><small>Local de embarque</small><strong>No 36 Balarabe Musa Cres</strong><span>Victoria Island 106104, Lagos</span></div><button class="edit-pickup" id="edit-pickup">Editar</button></div>
+        <div class="saved-list-heading"><h2>Locais salvos</h2><button class="text-button" id="add-place">＋ Adicionar</button></div>
+        <div class="destination-list">
+          <button class="destination-row" data-destination="Infinity House" data-address="30 Ilupeju Byepass, Onipanu 102215"><span class="round-place-icon">⌂</span><span><strong>Infinity House</strong><small>30 Ilupeju Byepass, Onipanu 102215</small></span><span class="row-arrow">›</span></button>
+          <button class="destination-row" data-destination="Keystone Bank" data-address="224 Ikorodu-Ososun Rd, Palmgrove"><span class="round-place-icon">⌖</span><span><strong>Keystone Bank</strong><small>224 Ikorodu-Ososun Rd, Palmgrove</small></span><span class="row-arrow">›</span></button>
+          <button class="destination-row" data-destination="Ikeja City Mall" data-address="Obafemi Awolowo Way, Alausa, Ikeja"><span class="round-place-icon">◷</span><span><strong>Ikeja City Mall</strong><small>Obafemi Awolowo Way, Alausa, Ikeja</small></span><span class="row-arrow">›</span></button>
+          <button class="destination-row" data-destination="Victoria Garden City" data-address="Lekki-Epe Expressway, Lagos"><span class="round-place-icon">☆</span><span><strong>Victoria Garden City</strong><small>Lekki-Epe Expressway, Lagos</small></span><span class="row-arrow">›</span></button>
+        </div>
+        <button class="primary-button search-continue" id="search-continue">Definir destino</button>
+      </section>
+
+      <section class="screen ride-screen" id="rides-screen" aria-labelledby="rides-title">
+        <div class="ride-map"><img src="assets/map-route.png" alt="Mapa da rota em Lagos" /><button class="map-back" data-back aria-label="Voltar">←</button><div class="route-label route-start">No 36 Balarabe Musa Cres</div><div class="route-label route-end" id="route-end">Ikeja City Mall</div><span class="map-current-pin"></span><span class="map-destination-pin"></span></div>
+        <div class="ride-panel">
+          <div class="drag-handle"></div><div class="trip-summary"><span class="route-line"><i></i><i></i></span><div><strong>No 36 Balarabe Musa Cres</strong><small id="ride-destination">Ikeja City Mall</small></div><button class="edit-trip" id="edit-trip">Edit</button></div>
+          <p class="fare-notice">As tarifas estão um pouco mais altas devido à maior demanda</p>
+          <h1 class="screen-title ride-title" id="rides-title">Escolha uma corrida</h1>
+          <div class="ride-options">
+            <button class="ride-option selected" data-ride="UberX" data-price="NGN 9.100,00"><img src="assets/car-uberx.png" alt="Veículo UberX" /><span class="ride-info"><strong>UberX <small>♟ 4</small></strong><span>10:24 · a 12 min</span></span><strong class="ride-price">NGN 9.100,00</strong></button>
+            <button class="ride-option" data-ride="UberX Share" data-price="NGN 8.250,00"><img src="assets/car-share.png" alt="Veículo UberX Share" /><span class="ride-info"><strong>UberX Share</strong><span>10:25–10:31 · a 13 min</span><em>Economize até 30% compartilhando</em></span><strong class="ride-price">NGN 8.250,00</strong></button>
+            <button class="ride-option" data-ride="Connect" data-price="NGN 5.600,00"><img src="assets/connect-scooter.png" alt="Scooter de entrega Uber Connect" /><span class="ride-info"><strong>Connect</strong><span>10:22 · a 10 min</span></span><strong class="ride-price">NGN 5.600,00</strong></button>
+          </div>
+          <button class="payment-row" id="payment-button"><span class="cash-icon">▣</span><span>Dinheiro</span><span class="row-arrow">›</span></button>
+          <button class="primary-button confirm-ride" id="confirm-ride">Confirmar UberX</button>
+        </div>
+      </section>
+
+      <section class="screen" id="activity-screen" aria-labelledby="activity-title">
+        <div class="activity-content"><h1 class="screen-title" id="activity-title">Minhas viagens</h1><div class="activity-tabs"><button class="active">Todas</button><button>Pessoal</button><button>Trabalho</button></div><h2 class="month-label">Fev. 2023</h2>
+          <button class="trip-row"><span class="trip-icon">↗</span><span><strong>Oniru Private Beach, Lagos</strong><small>17 fev. · 19:19</small></span><b>NGN 4.600</b></button>
+          <h2 class="month-label">Nov. 2022</h2><button class="trip-row"><span class="trip-icon">↗</span><span><strong>No 36 Balarabe Musa Cres...</strong><small>10 nov. · 18:46</small></span><b>NGN 1.700</b></button>
+          <button class="trip-row"><span class="trip-icon">↗</span><span><strong>Shoprite Adeniran Ogunsanya</strong><small>4 nov. · 12:05</small></span><b>NGN 2.600</b></button>
+          <h2 class="month-label">Out. 2022</h2><button class="trip-row"><span class="trip-icon">↗</span><span><strong>Nigerian Institute of ...</strong><small>23 out. · 09:10</small></span><b>NGN 900</b></button>
+        </div>
+      </section>
+
+      <section class="screen" id="account-screen" aria-labelledby="account-title"><div class="account-content"><div class="profile-avatar">A</div><h1 class="screen-title" id="account-title">Conta</h1><button class="account-row">Dados pessoais <span>›</span></button><button class="account-row">Pagamento <span>›</span></button><button class="account-row">Configurações <span>›</span></button><button class="account-row">Ajuda <span>›</span></button></div></section>
+
+      <nav class="bottom-nav" aria-label="Navegação principal">
+        <button class="nav-item active" data-nav="Home"><span class="nav-glyph home-glyph">◆</span><span>Início</span></button>
+        <button class="nav-item" data-nav="Services"><span class="nav-glyph services-glyph">▦</span><span>Serviços</span></button>
+        <button class="nav-item" data-nav="Activity"><span class="nav-glyph activity-glyph">▣</span><span>Atividade</span></button>
+        <button class="nav-item" data-nav="Account"><span class="nav-glyph account-glyph">●</span><span>Conta</span></button>
+      </nav>
+    </main>
+
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Fechar">×</button><div id="modal-content"></div></section></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
